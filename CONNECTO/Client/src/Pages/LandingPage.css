@@ -1,0 +1,42 @@
+/* LandingPage.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0066ff, #66ccff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .center-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .center-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .center-content h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  
