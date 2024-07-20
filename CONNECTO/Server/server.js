@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-// Basic route
+
 app.get('/', (req, res) => {
   res.send('Welcome to CONNECTO!');
 });
