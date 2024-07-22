@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const User = require('./models/User'); 
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -18,6 +19,18 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.get('/', (req, res) => {
   res.send('Welcome to CONNECTO!');
+});
+
+
+app.post('/users', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    const user = new User({ name, email, password });
+    await user.save();
+    res.status(201).send(user);
+  } catch (err) {
+    res.status(400).send(err);
+  }
 });
 
 app.listen(port, () => {
