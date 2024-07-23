@@ -25,10 +25,31 @@ app.post('/users', async (req, res) => {
     await user.save();
     res.status(201).send(user);
   } catch (err) {
-    res.status(400).send({
-      message: 'Error creating user',
-      error: err.message
-    });
+    if (err.name === 'ValidationError') {
+   
+      res.status(400).send({
+        message: 'Validation error',
+        errors: err.errors
+      });
+    } else if (err.code === 11000) {
+      
+      res.status(400).send({
+        message: 'Duplicate key error',
+        error: 'Email already exists'
+      });
+    } else if (err instanceof mongoose.Error) {
+     
+      res.status(500).send({
+        message: 'Database error occurred',
+        error: err.message
+      });
+    } else {
+      
+      res.status(500).send({
+        message: 'An unknown error occurred',
+        error: err.message
+      });
+    }
   }
 });
 
