@@ -18,7 +18,6 @@ const Signup = () => {
         credentials: 'include', 
       });
       if (response.ok) {
-        alert(password);
         navigate('/login');
       } else {
         const errorData = await response.json();
@@ -31,41 +30,43 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>
-        Already have an account? <a href="/login">Login</a>
-      </p>
+    <div className="auth-container">
+      <div className="signup-container">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSignup}>
+          <label>
+            Name:
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </div>
     </div>
   );
 };
