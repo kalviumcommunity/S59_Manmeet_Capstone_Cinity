@@ -53,6 +53,19 @@
 
 .login-container button:hover {
   background-color: #45a049;
+  animation: popUp 0.3s forwards;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .google-login-button {
@@ -67,6 +80,7 @@
   cursor: pointer;
   text-align: center;
   margin-top: 15px;
+  transition: transform 0.3s ease;
 }
 
 .google-login-button img {
@@ -77,6 +91,7 @@
 
 .google-login-button:hover {
   background-color: #f1f1f1;
+  transform: scale(1.05);
 }
 
 .login-container p {
