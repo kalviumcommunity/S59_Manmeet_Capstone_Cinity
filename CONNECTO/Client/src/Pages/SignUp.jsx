@@ -15,7 +15,7 @@ const Signup = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),
-        credentials: 'include', // Include credentials for CORS
+        
       });
       if (response.ok) {
         alert(password);
