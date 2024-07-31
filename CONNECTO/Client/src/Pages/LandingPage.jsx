@@ -13,7 +13,7 @@ const LandingPage = () => {
       try {
         const response = await fetch('http://localhost:5001/api/user', {
           method: 'GET',
-          credentials: 'include', // Include credentials for CORS
+          credentials: 'include', 
         });
 
         if (response.ok) {
@@ -21,7 +21,7 @@ const LandingPage = () => {
           if (user.profilePicture) {
             setProfilePicture(user.profilePicture);
           } else {
-            setUserInitial(user.name.charAt(0)); // Set user initial if profile picture is not available
+            setUserInitial(user.name.charAt(0)); 
           }
           setIsLoggedIn(true);
         } else {
